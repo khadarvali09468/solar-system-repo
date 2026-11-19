@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-webhook
+  name: nginx-webhook
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-webhook
+  template:
+    metadata:
+      labels:
+        app: nginx-webhook
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
